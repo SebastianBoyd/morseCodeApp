@@ -39,6 +39,6 @@ public class MyActivity extends Activity {
     }
     public void vibrateTest(View view) {
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(100);
+        v.vibrate(200);
     }
 }
