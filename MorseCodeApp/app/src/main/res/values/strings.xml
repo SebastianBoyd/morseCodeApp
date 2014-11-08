@@ -3,6 +3,8 @@
 
     <string name="app_name">MorseCodeApp</string>
     <string name="hello_world">Hello world!!</string>
+    <string name="center_button">Vibrate</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_vibrate">VibrateActivity</string>
 
 </resources>
