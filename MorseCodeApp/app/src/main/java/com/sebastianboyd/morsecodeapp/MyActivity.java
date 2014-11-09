@@ -180,6 +180,33 @@ public class MyActivity extends Activity {
             num++;
         }
     }
+    public void vibrateTest() {
+        Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(200);
+
+
+    }
+
+    public void vibrateDash(){
+
+        Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(dash);
+
+    }
+    public void vibrateDot(){
+        Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(dot);
+
+    }
+
+    public void vibrateSpace() {
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 
     public void vibrateOutput(){
@@ -196,16 +223,16 @@ public class MyActivity extends Activity {
         int num2 = 0;
         while (num2 < workingArray.length) {
             if (workingArray[number] == '0') {
-                vibrate.vibrateDot();
+                vibrateDot();
 
 
             }
             if (workingArray[number] == '1') {
-                vibrate.vibrateDash();
+                vibrateDash();
 
             }
             if (workingArray[number] == '2') {
-                vibrate.vibrateSpace();
+                vibrateSpace();
             }
             try {
                 Thread.sleep(100);
