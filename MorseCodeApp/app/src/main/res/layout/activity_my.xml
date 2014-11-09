@@ -40,9 +40,16 @@
         android:id="@+id/userInput"
 
         android:text="Your Message"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter"
+        android:id="@+id/enter"
+        android:layout_toEndOf="@+id/userInput"
+        android:layout_alignBottom="@+id/userInput"
+        android:layout_toRightOf="@+id/userInput" />
 
 </RelativeLayout>

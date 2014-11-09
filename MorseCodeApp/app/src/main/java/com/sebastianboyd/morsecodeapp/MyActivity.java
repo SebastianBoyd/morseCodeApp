@@ -15,20 +15,29 @@ import android.widget.*;
 public class MyActivity extends Activity {
 
     private EditText userInput;
-
-
+    private Button enter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+        enter = (Button) findViewById(R.id.enter);
+
         userInput = (EditText) findViewById(R.id.userInput);
+
+
+    }
+    public void onEnterButtonClick(View view){
         String input = String.valueOf(userInput.getText());
 
         String response = input;
         Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
 
+
     }
+
+
+
 
 
     @Override
