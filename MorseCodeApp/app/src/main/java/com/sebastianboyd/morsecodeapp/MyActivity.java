@@ -129,6 +129,53 @@ public class MyActivity extends Activity {
             torchOn = false;
         }
     }
+    public void flashOutput(View view){
+        startCamera();
+        userInput = (EditText) findViewById(R.id.userInput);
+        String input = String.valueOf(userInput.getText());
+        String response = input;
+        String[] converted = binaryConvert(response);
+        int num = 0;
+        String working = null;
+        while (num < converted.length){
+            working = converted[num];
+            char[] workingArray = working.toCharArray();
+            int num2 = 0;
+            while (num2 < workingArray.length){
+                if (workingArray[num2] == '0'){
+                    flashOn();
+                    try {
+                        Thread.sleep(200);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    flashOff();
+
+                }
+                if (workingArray[num2] == '1'){
+                    flashOn();
+                    try {
+                        Thread.sleep(400);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    flashOff();
+                }
+                if (workingArray[num2] == '2'){
+                    try {
+                        Thread.sleep(200);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
     public void vibrateTest(View view) {
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v.vibrate(200);
