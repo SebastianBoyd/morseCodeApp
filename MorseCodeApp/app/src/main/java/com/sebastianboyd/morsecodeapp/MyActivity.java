@@ -38,12 +38,6 @@ public class MyActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-    public void vibrateTest(View view) {
-        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(200);
-    }
-
-<<<<<<< HEAD
     public void flashTest(View view) {
         Camera cam = Camera.open();
         Parameters p = cam.getParameters();
@@ -59,9 +53,11 @@ public class MyActivity extends Activity {
         cam.release();
 
     }
+    public void vibrateTest(View view) {
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(200);
+    }
 
-=======
->>>>>>> FETCH_HEAD
     private int dash = 1;
     private int dot = 0;
 
