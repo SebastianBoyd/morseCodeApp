@@ -56,11 +56,11 @@
 
         <Button
             android:layout_width="0dp"
-            android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:text="@string/enter_button"
-            android:onClick="onEnterButtonClick"
-            android:id="@+id/enter" />
+            android:text="Done"
+            android:onClick="onDoneButtonClick"
+            android:id="@+id/done"
+            android:layout_weight="1.06" />
 
 
      </LinearLayout>

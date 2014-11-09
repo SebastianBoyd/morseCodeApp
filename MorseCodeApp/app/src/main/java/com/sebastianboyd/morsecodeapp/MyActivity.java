@@ -11,6 +11,7 @@ import java.util.*;
 import android.view.MenuItem;
 import java.util.Arrays;
 import android.widget.*;
+import android.view.inputmethod.*;
 
 
 public class MyActivity extends Activity {
@@ -28,14 +29,11 @@ public class MyActivity extends Activity {
         makeMap();
 
 
-
-
     }
-    public void onEnterButtonClick(View view){
-        userInput = (EditText) findViewById(R.id.userInput);
-        String input = String.valueOf(userInput.getText());
-        String response = input;
-        binaryConvert(response);
+    public void onDoneButtonClick(View view){
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(userInput.getWindowToken(), 0);
+
     }
     public String[] binaryConvert(String response){
         response = response.toLowerCase(); //making the array lower case
