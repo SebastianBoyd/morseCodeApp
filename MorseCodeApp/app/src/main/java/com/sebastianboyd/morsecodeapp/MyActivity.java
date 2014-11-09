@@ -34,6 +34,9 @@ public class MyActivity extends Activity {
         userInput = (EditText) findViewById(R.id.userInput);
         String input = String.valueOf(userInput.getText());
         String response = input;
+        binaryConvert(response);
+    }
+    public String[] binaryConvert(String response){
         response = response.toLowerCase();
         String[] responseArray = response.split("");
         int num = 1;
@@ -48,8 +51,7 @@ public class MyActivity extends Activity {
         }
         String printResponse = Arrays.toString(binaryArray);
         Toast.makeText(this, printResponse, Toast.LENGTH_SHORT).show();
-
-
+        return binaryArray;
     }
 
 
@@ -102,6 +104,24 @@ public class MyActivity extends Activity {
         } catch (InterruptedException e1) {
             e1.printStackTrace();
         }
+        if (mCamera != null && mParameters != null) {
+            mParameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+            mCamera.setParameters(mParameters);
+            mCamera.stopPreview();
+            torchOn = false;
+        }
+    }
+    public void flashOn(){
+        if (mCamera != null && mParameters != null) {
+            if (!mParameters.getFlashMode().equals(Camera.Parameters.FLASH_MODE_TORCH)) {
+                mParameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                mCamera.setParameters(mParameters);
+                mCamera.startPreview();
+                torchOn = true;
+            }
+        }
+    }
+    public void flashOff(){
         if (mCamera != null && mParameters != null) {
             mParameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
             mCamera.setParameters(mParameters);
