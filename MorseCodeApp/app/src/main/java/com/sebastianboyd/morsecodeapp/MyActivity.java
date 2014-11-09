@@ -190,12 +190,12 @@ public class MyActivity extends Activity {
     public void vibrateDash(){
 
         Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(dash);
+        v.vibrate(800);
 
     }
     public void vibrateDot(){
         Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(dot);
+        v.vibrate(200);
 
     }
 
