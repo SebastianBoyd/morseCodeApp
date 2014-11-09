@@ -7,8 +7,6 @@ import android.util.Log;
  */
 public class userInput extends MyActivity {
 
-
-
-}
-
-
+        //EditText userInput = (EditText)findViewById(R.id.userInput);
+        //String[] input = userInput.split("");
+        }
