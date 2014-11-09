@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/vibrate_button"
         android:id="@+id/button"
-        android:onClick="vibrateTest"
+        android:onClick="vibrateOutput"
         android:layout_above="@+id/button2"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"

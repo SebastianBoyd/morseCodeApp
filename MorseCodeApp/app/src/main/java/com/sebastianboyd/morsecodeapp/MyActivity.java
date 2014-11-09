@@ -17,8 +17,9 @@ public class MyActivity extends Activity {
 
     Map Morse = new HashMap();
     private EditText userInput;
-    private int dash = 400;
+    private int dash = 800;
     private int dot = 200;
+    private int space = 400;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +38,14 @@ public class MyActivity extends Activity {
         binaryConvert(response);
     }
     public String[] binaryConvert(String response){
-        response = response.toLowerCase();
-        String[] responseArray = response.split("");
+        response = response.toLowerCase(); //making the array lower case
+        String[] responseArray = response.split(""); //spitting the response array
         int num = 1;
         String working;
-        String[] binaryArray = new String[responseArray.length - 1];
-        String originalPrint = Arrays.toString(responseArray);
-        Toast.makeText(this, originalPrint, Toast.LENGTH_SHORT).show();
-        while (num < responseArray.length){
+        String[] binaryArray = new String[responseArray.length - 1]; //new string array
+        String originalPrint = Arrays.toString(responseArray); //turning array into string
+        Toast.makeText(this, originalPrint, Toast.LENGTH_SHORT).show(); //printing array one screen
+        while (num < responseArray.length){ //while loop
             working = responseArray[num];
             binaryArray[num - 1] = (String) Morse.get(responseArray[num]);
             num++;
@@ -176,9 +177,77 @@ public class MyActivity extends Activity {
             }
         }
     }
-    public void vibrateTest(View view) {
+    public void vibrateTest() {
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v.vibrate(200);
+
+
+    }
+
+    public void vibrateDash(){
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(dash);
+
+    }
+    public void vibrateDot(){
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(dot);
+
+    }
+
+    public void vibrateSpace() {
+
+
+    }
+
+
+    public void vibrateOutput(){
+
+        userInput = (EditText) findViewById(R.id.userInput);
+        String input = String.valueOf(userInput.getText());
+        String response = input;
+        String[] converted = binaryConvert(response);
+        int number = 0;
+        String working = null;
+        while(number < number)
+            working = converted[number];
+        char[] workingArray = working.toCharArray();
+        int num2 = 0;
+        while (num2 < workingArray.length) {
+            if (workingArray[number] == '0') {
+                flashOn();
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                vibrateDot();
+
+            }
+            if (workingArray[number] == '1') {
+                flashOn();
+                try {
+                    Thread.sleep(400);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                vibrateDash();
+            }
+            if (workingArray[number] == '2') {
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+
     }
 
     public void makeMap(){
