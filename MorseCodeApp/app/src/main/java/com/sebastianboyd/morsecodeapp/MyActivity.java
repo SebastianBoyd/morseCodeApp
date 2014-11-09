@@ -58,8 +58,8 @@ public class MyActivity extends Activity {
         v.vibrate(200);
     }
 
-    private int dash = 1;
-    private int dot = 0;
+    private int dash = 400;
+    private int dot = 200;
 
     private int a;
     private int b;
@@ -89,7 +89,6 @@ public class MyActivity extends Activity {
     private int z;
 
     int alphabet[] = new int [26];
-
 
 
     public void assignVar(){
