@@ -210,30 +210,31 @@ public class MyActivity extends Activity {
 
 
     public void vibrateOutput(View view){
-
         userInput = (EditText) findViewById(R.id.userInput);
         String input = String.valueOf(userInput.getText());
         String response = input;
         String[] converted = binaryConvert(response);
-        int number = 0;
         Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+        int num = 0;
         String working = null;
-        while(number < converted.length)
-            working = converted[number];
+        while (num < converted.length){
+            working = converted[num];
             char[] workingArray = working.toCharArray();
             int num2 = 0;
-            while (num2 < workingArray.length) {
-                if (workingArray[number] == '0') {
+            while (num2 < workingArray.length){
+                if (workingArray[num2] == '0'){
                     v.vibrate(800);
-
 
                 }
-                if (workingArray[number] == '1') {
+                if (workingArray[num2] == '1'){
                     v.vibrate(800);
-
-                 }
-                if (workingArray[number] == '2') {
-                    v.vibrate(800);
+                }
+                if (workingArray[num2] == '2'){
+                    try {
+                        Thread.sleep(400);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
                 try {
                     Thread.sleep(100);
@@ -242,10 +243,10 @@ public class MyActivity extends Activity {
                 }
                 num2++;
             }
-            number++;
-
-
+            num++;
         }
+    }
+
 
     public void makeMap(){
         Morse.put("a", "01");
