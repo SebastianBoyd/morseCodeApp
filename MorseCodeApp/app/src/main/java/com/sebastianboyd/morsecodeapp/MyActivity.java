@@ -36,11 +36,13 @@ public class MyActivity extends Activity {
         String printResponse = Arrays.toString(responseArray);
         Toast.makeText(this, printResponse, Toast.LENGTH_SHORT).show();
 
+        int num = 0;
+        while(responseArray[0] != alphabet[num]){
+            num ++;
+        }
+
 
     }
-
-
-
 
 
     @Override
@@ -134,10 +136,12 @@ public class MyActivity extends Activity {
     private int y;
     private int z;
 
-    int alphabet[] = new int [26];
+
+    String alphabet[] = {"a", "b", "c"};
 
 
     public void assignVar(){
+
         a = 01;
         b = 1000;
         c = 1010;
