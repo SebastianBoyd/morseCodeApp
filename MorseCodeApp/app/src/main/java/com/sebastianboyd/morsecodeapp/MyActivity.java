@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.View;
 import android.hardware.Camera;
 import java.util.*;
+import android.view.WindowManager;
 import android.view.MenuItem;
 import java.util.Arrays;
 import java.util.logging.Handler;
@@ -34,8 +35,7 @@ public class MyActivity extends Activity {
 
     }
     public void onDoneButtonClick(View view){
-        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(userInput.getWindowToken(), 0);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
     }
     public String[] binaryConvert(String response){
@@ -180,25 +180,25 @@ public class MyActivity extends Activity {
             num++;
         }
     }
-    public void vibrateTest() {
+    public void vibrateTest(View view) {
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v.vibrate(200);
 
 
     }
 
-    public void vibrateDash(){
+    public void vibrateDash(View view){
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v.vibrate(dash);
 
     }
-    public void vibrateDot(){
+    public void vibrateDot(View view){
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v.vibrate(dot);
 
     }
 
-    public void vibrateSpace() {
+    public void vibrateSpace(View view) {
         try {
             Thread.sleep(200);
         } catch (InterruptedException e) {
@@ -208,7 +208,7 @@ public class MyActivity extends Activity {
     }
 
 
-    public void vibrateOutput(){
+    public void vibrateOutput(View view){
 
         userInput = (EditText) findViewById(R.id.userInput);
         String input = String.valueOf(userInput.getText());
@@ -222,16 +222,16 @@ public class MyActivity extends Activity {
         int num2 = 0;
         while (num2 < workingArray.length) {
             if (workingArray[number] == '0') {
-                vibrateDot();
+                vibrateDot(view);
 
 
             }
             if (workingArray[number] == '1') {
-                vibrateDash();
+                vibrateDash(view);
 
             }
             if (workingArray[number] == '2') {
-                vibrateSpace();
+                vibrateSpace(view);
             }
             try {
                 Thread.sleep(100);
