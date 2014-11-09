@@ -42,6 +42,8 @@ public class MyActivity extends Activity {
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v.vibrate(200);
     }
+
+<<<<<<< HEAD
     public void flashTest(View view) {
         Camera cam = Camera.open();
         Parameters p = cam.getParameters();
@@ -57,4 +59,32 @@ public class MyActivity extends Activity {
         cam.release();
 
     }
+
+=======
+>>>>>>> FETCH_HEAD
+    private int dash = 1;
+    private int dot = 0;
+
+    private int a;
+    private int b;
+    private int c;
+    private int d;
+    private int e;
+    private int f;
+    private int g;
+    private int h;
+
+
+    public void assignVar(){
+        a = 01;
+        b = 1000;
+        c = 1010;
+        d = 100;
+        e = 0;
+        f = 0010;
+        g = 110;
+        h = 0000;
+
+    }
+
 }
