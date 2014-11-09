@@ -9,6 +9,7 @@ import android.view.View;
 import android.hardware.Camera.Parameters;
 import android.hardware.Camera;
 import android.view.MenuItem;
+import java.util.Arrays;
 import android.widget.*;
 
 
@@ -31,7 +32,9 @@ public class MyActivity extends Activity {
         String input = String.valueOf(userInput.getText());
 
         String response = input;
-        Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
+        String[] responseArray = response.split("");
+        String printResponse = Arrays.toString(responseArray);
+        Toast.makeText(this, printResponse, Toast.LENGTH_SHORT).show();
 
 
     }
