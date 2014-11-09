@@ -69,6 +69,25 @@ public class MyActivity extends Activity {
     private int f;
     private int g;
     private int h;
+    private int i;
+    private int j;
+    private int k;
+    private int l;
+    private int m;
+    private int n;
+    private int o;
+    private int p;
+    private int q;
+    private int r;
+    private int s;
+    private int t;
+    private int u;
+    private int v;
+    private int w;
+    private int x;
+    private int y;
+    private int z;
+
 
 
     public void assignVar(){
@@ -80,6 +99,14 @@ public class MyActivity extends Activity {
         f = 0010;
         g = 110;
         h = 0000;
+        i = 01;
+        j = 0111;
+        k = 101;
+        l = 0100;
+        m = 11;
+        n = 10;
+        o = 111;
+        p = 0110;
 
     }
 
