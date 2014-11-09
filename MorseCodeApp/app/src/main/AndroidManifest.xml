@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sebastianboyd.morsecodeapp" >
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <permission android:name="android.permission.FLASHLIGHT"
+        android:permissionGroup="android.permission-group.HARDWARE_CONTROLS"
+        android:protectionLevel="normal"/>
 
     <application
         android:allowBackup="true"
@@ -17,14 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".VibrateActivity"
-            android:label="@string/title_activity_vibrate"
-            android:parentActivityName=".MyActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.sebastianboyd.morsecodeapp.MyActivity" />
-        </activity>
+
     </application>
 
 </manifest>

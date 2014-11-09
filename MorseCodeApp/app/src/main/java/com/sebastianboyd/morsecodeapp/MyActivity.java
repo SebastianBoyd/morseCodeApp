@@ -5,8 +5,9 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.Menu;
-import android.content.Intent;
 import android.view.View;
+import android.hardware.Camera.Parameters;
+import android.hardware.Camera;
 import android.view.MenuItem;
 
 
@@ -40,5 +41,20 @@ public class MyActivity extends Activity {
     public void vibrateTest(View view) {
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         v.vibrate(200);
+    }
+    public void flashTest(View view) {
+        Camera cam = Camera.open();
+        Parameters p = cam.getParameters();
+        p.setFlashMode(Parameters.FLASH_MODE_TORCH);
+        cam.setParameters(p);
+        cam.startPreview();
+        try {
+            wait(200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        cam.stopPreview();
+        cam.release();
+
     }
 }
