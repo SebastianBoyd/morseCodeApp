@@ -11,8 +11,6 @@ import java.util.*;
 import android.view.WindowManager;
 import android.view.MenuItem;
 import java.util.Arrays;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
 import android.widget.*;
 import android.view.inputmethod.*;
@@ -227,17 +225,17 @@ public class MyActivity extends Activity {
 
                 }
                 if (workingArray[num2] == '1'){
-                    v.vibrate(800);
+                    v.vibrate(400);
                 }
                 if (workingArray[num2] == '2'){
                     try {
-                        Thread.sleep(400);
+                        Thread.sleep(800);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(400);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
