@@ -223,16 +223,16 @@ public class MyActivity extends Activity {
         int num2 = 0;
         while (num2 < workingArray.length) {
             if (workingArray[number] == '0') {
-                vibrateDot();
+                vibrateTest();
 
 
             }
             if (workingArray[number] == '1') {
-                vibrateDash();
+                vibrateTest();
 
             }
             if (workingArray[number] == '2') {
-                vibrateSpace();
+                vibrateTest();
             }
             try {
                 Thread.sleep(100);
