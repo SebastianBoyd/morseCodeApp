@@ -38,20 +38,43 @@ public class MyActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-    public void flashTest(View view) {
-        Camera cam = Camera.open();
-        Parameters p = cam.getParameters();
-        p.setFlashMode(Parameters.FLASH_MODE_TORCH);
-        cam.setParameters(p);
-        cam.startPreview();
-        try {
-            wait(200);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        cam.stopPreview();
-        cam.release();
+    private static Camera mCamera;
+    private static Camera.Parameters mParameters;
+    public static boolean torchOn = false;
 
+    public static void startCamera() {
+        if (mCamera == null) {
+            mCamera = Camera.open();
+            mParameters = mCamera.getParameters();
+        }
+    }
+    public static void destroy() {
+        if (mCamera != null) {
+            mCamera.release();
+            mCamera = null;
+        }
+    }
+    public void flashTest(View view) {
+        startCamera();
+        if (mCamera != null && mParameters != null) {
+            if (!mParameters.getFlashMode().equals(Camera.Parameters.FLASH_MODE_TORCH)) {
+                mParameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                mCamera.setParameters(mParameters);
+                mCamera.startPreview();
+                torchOn = true;
+            }
+        }
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e1) {
+            e1.printStackTrace();
+        }
+        if (mCamera != null && mParameters != null) {
+            mParameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+            mCamera.setParameters(mParameters);
+            mCamera.stopPreview();
+            torchOn = false;
+        }
     }
     public void vibrateTest(View view) {
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
