@@ -88,6 +88,8 @@ public class MyActivity extends Activity {
     private int y;
     private int z;
 
+    int alphabet[] = new int [26];
+
 
 
     public void assignVar(){
@@ -107,6 +109,16 @@ public class MyActivity extends Activity {
         n = 10;
         o = 111;
         p = 0110;
+        q = 1101;
+        r = 010;
+        s = 000;
+        t = 1;
+        u = 001;
+        v = 0001;
+        w = 011;
+        x = 1001;
+        y = 1011;
+        z = 1100;
 
     }
 
