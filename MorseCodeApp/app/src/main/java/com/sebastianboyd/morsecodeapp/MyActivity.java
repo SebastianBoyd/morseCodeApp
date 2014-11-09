@@ -215,7 +215,7 @@ public class MyActivity extends Activity {
         int num2 = 0;
         while (num2 < workingArray.length) {
             if (workingArray[number] == '0') {
-                flashOn();
+                vibrateDot();
                 try {
                     Thread.sleep(200);
                 } catch (InterruptedException e) {
@@ -225,7 +225,7 @@ public class MyActivity extends Activity {
 
             }
             if (workingArray[number] == '1') {
-                flashOn();
+                vibrateDash();
                 try {
                     Thread.sleep(400);
                 } catch (InterruptedException e) {
