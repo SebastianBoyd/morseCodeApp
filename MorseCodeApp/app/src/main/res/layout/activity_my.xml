@@ -32,24 +32,36 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="text|textMultiLine"
-        android:ems="10"
-        android:id="@+id/userInput"
 
-        android:text="Your Message"
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/button">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:inputType="text|textMultiLine"
+            android:ems="10"
+            android:id="@+id/userInput"
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter"
-        android:id="@+id/enter"
-        android:layout_toEndOf="@+id/userInput"
-        android:layout_alignBottom="@+id/userInput"
-        android:layout_toRightOf="@+id/userInput" />
+            android:text="Your Message" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_button"
+            android:id="@+id/enter" />
+
+
+     </LinearLayout>
 
 </RelativeLayout>
