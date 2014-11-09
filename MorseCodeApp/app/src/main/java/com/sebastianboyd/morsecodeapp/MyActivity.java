@@ -223,16 +223,19 @@ public class MyActivity extends Activity {
         int num2 = 0;
         while (num2 < workingArray.length) {
             if (workingArray[number] == '0') {
-                vibrateTest();
+                Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+                v.vibrate(800);
 
 
             }
             if (workingArray[number] == '1') {
-                vibrateTest();
+                Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+                v.vibrate(800);
 
             }
             if (workingArray[number] == '2') {
-                vibrateTest();
+                Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+                v.vibrate(800);
             }
             try {
                 Thread.sleep(100);
