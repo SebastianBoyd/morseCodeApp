@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.Menu;
 import android.view.View;
-import android.hardware.Camera.Parameters;
 import android.hardware.Camera;
+import java.util.*;
 import android.view.MenuItem;
 import java.util.Arrays;
 import android.widget.*;
@@ -15,31 +15,39 @@ import android.widget.*;
 
 public class MyActivity extends Activity {
 
+    Map Morse = new HashMap();
     private EditText userInput;
-    private Button enter;
+    private int dash = 400;
+    private int dot = 200;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
-        enter = (Button) findViewById(R.id.enter);
+        makeMap();
 
-        userInput = (EditText) findViewById(R.id.userInput);
+
 
 
     }
     public void onEnterButtonClick(View view){
+        userInput = (EditText) findViewById(R.id.userInput);
         String input = String.valueOf(userInput.getText());
-
         String response = input;
+        response = response.toLowerCase();
         String[] responseArray = response.split("");
-        String printResponse = Arrays.toString(responseArray);
-        Toast.makeText(this, printResponse, Toast.LENGTH_SHORT).show();
-
-        int num = 0;
-        while(responseArray[0] != alphabet[num]){
-            num ++;
+        int num = 1;
+        String working;
+        String[] binaryArray = new String[responseArray.length - 1];
+        String originalPrint = Arrays.toString(responseArray);
+        Toast.makeText(this, originalPrint, Toast.LENGTH_SHORT).show();
+        while (num < responseArray.length){
+            working = responseArray[num];
+            binaryArray[num - 1] = (String) Morse.get(responseArray[num]);
+            num++;
         }
+        String printResponse = Arrays.toString(binaryArray);
+        Toast.makeText(this, printResponse, Toast.LENGTH_SHORT).show();
 
 
     }
@@ -106,69 +114,38 @@ public class MyActivity extends Activity {
         v.vibrate(200);
     }
 
-    private int dash = 400;
-    private int dot = 200;
-
-    private int a;
-    private int b;
-    private int c;
-    private int d;
-    private int e;
-    private int f;
-    private int g;
-    private int h;
-    private int i;
-    private int j;
-    private int k;
-    private int l;
-    private int m;
-    private int n;
-    private int o;
-    private int p;
-    private int q;
-    private int r;
-    private int s;
-    private int t;
-    private int u;
-    private int v;
-    private int w;
-    private int x;
-    private int y;
-    private int z;
-
-
-    String alphabet[] = {"a", "b", "c"};
-
-
-    public void assignVar(){
-
-        a = 01;
-        b = 1000;
-        c = 1010;
-        d = 100;
-        e = 0;
-        f = 0010;
-        g = 110;
-        h = 0000;
-        i = 01;
-        j = 0111;
-        k = 101;
-        l = 0100;
-        m = 11;
-        n = 10;
-        o = 111;
-        p = 0110;
-        q = 1101;
-        r = 010;
-        s = 000;
-        t = 1;
-        u = 001;
-        v = 0001;
-        w = 011;
-        x = 1001;
-        y = 1011;
-        z = 1100;
-
+    public void makeMap(){
+        Morse.put("a", "01");
+        Morse.put("b", "1000");
+        Morse.put("c", "1010");
+        Morse.put("d", "100");
+        Morse.put("e", "0");
+        Morse.put("f", "0010");
+        Morse.put("g", "110");
+        Morse.put("h", "0000");
+        Morse.put("i", "00");
+        Morse.put("j", "0111");
+        Morse.put("k", "101");
+        Morse.put("l", "0100");
+        Morse.put("m", "11");
+        Morse.put("n", "10");
+        Morse.put("o", "111");
+        Morse.put("p", "0110");
+        Morse.put("q", "1101");
+        Morse.put("r", "010");
+        Morse.put("s", "000");
+        Morse.put("t", "1");
+        Morse.put("u", "001");
+        Morse.put("v", "0001");
+        Morse.put("w", "011");
+        Morse.put("x", "1001");
+        Morse.put("y", "1011");
+        Morse.put("z", "1100");
+        Morse.put(" ", "2");
+        Morse.put("\n", "22");
     }
+
+
+
 
 }

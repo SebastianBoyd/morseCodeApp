@@ -59,6 +59,7 @@
             android:layout_weight="2"
             android:layout_height="wrap_content"
             android:text="@string/enter_button"
+            android:onClick="onEnterButtonClick"
             android:id="@+id/enter" />
 
 
