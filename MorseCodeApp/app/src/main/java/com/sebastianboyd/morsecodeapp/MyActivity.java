@@ -9,14 +9,25 @@ import android.view.View;
 import android.hardware.Camera.Parameters;
 import android.hardware.Camera;
 import android.view.MenuItem;
+import android.widget.*;
 
 
 public class MyActivity extends Activity {
+
+    private EditText userInput;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+        userInput = (EditText) findViewById(R.id.userInput);
+        String input = String.valueOf(userInput.getText());
+
+        String response = input;
+        Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
+
     }
 
 
