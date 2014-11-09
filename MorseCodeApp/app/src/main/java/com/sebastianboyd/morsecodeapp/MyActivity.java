@@ -216,38 +216,36 @@ public class MyActivity extends Activity {
         String response = input;
         String[] converted = binaryConvert(response);
         int number = 0;
+        Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
         String working = null;
-        while(number < number)
+        while(number < converted.length)
             working = converted[number];
-        char[] workingArray = working.toCharArray();
-        int num2 = 0;
-        while (num2 < workingArray.length) {
-            if (workingArray[number] == '0') {
-                Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
-                v.vibrate(800);
+            char[] workingArray = working.toCharArray();
+            int num2 = 0;
+            while (num2 < workingArray.length) {
+                if (workingArray[number] == '0') {
+                    v.vibrate(800);
 
 
-            }
-            if (workingArray[number] == '1') {
-                Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
-                v.vibrate(800);
+                }
+                if (workingArray[number] == '1') {
+                    v.vibrate(800);
 
+                 }
+                if (workingArray[number] == '2') {
+                    v.vibrate(800);
+                }
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                num2++;
             }
-            if (workingArray[number] == '2') {
-                Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
-                v.vibrate(800);
-            }
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            num2++;
+            number++;
+
+
         }
-        number++;
-
-
-    }
 
     public void makeMap(){
         Morse.put("a", "01");
