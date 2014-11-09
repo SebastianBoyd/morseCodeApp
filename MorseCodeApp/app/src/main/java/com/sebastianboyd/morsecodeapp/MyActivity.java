@@ -10,6 +10,9 @@ import android.hardware.Camera;
 import java.util.*;
 import android.view.MenuItem;
 import java.util.Arrays;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
+
 import android.widget.*;
 import android.view.inputmethod.*;
 
@@ -172,7 +175,9 @@ public class MyActivity extends Activity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                num2++;
             }
+            num++;
         }
     }
     public void vibrateTest() {
@@ -233,7 +238,9 @@ public class MyActivity extends Activity {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            num2++;
         }
+        number++;
 
 
     }
