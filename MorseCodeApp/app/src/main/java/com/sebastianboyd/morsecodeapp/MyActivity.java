@@ -196,7 +196,11 @@ public class MyActivity extends Activity {
     }
 
     public void vibrateSpace() {
-
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -216,29 +220,15 @@ public class MyActivity extends Activity {
         while (num2 < workingArray.length) {
             if (workingArray[number] == '0') {
                 vibrateDot();
-                try {
-                    Thread.sleep(200);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                vibrateDot();
+
 
             }
             if (workingArray[number] == '1') {
                 vibrateDash();
-                try {
-                    Thread.sleep(400);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                vibrateDash();
+
             }
             if (workingArray[number] == '2') {
-                try {
-                    Thread.sleep(200);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                vibrateSpace();
             }
             try {
                 Thread.sleep(100);
