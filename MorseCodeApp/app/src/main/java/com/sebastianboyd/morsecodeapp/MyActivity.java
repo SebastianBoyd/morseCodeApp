@@ -18,11 +18,11 @@ import android.view.inputmethod.*;
 public class MyActivity extends Activity {
 
     Map Morse = new HashMap();
-    EditText userInput;
+    private EditText userInput;
     private int dash = 800;
     private int dot = 200;
     private int space = 400;
-    Button done;
+    private Button done;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +30,6 @@ public class MyActivity extends Activity {
         setContentView(R.layout.activity_my);
         makeMap();
 
-        done = (Button) findViewById(R.id.bDone);
-        done.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                onDoneClick();
-            }
-        });
-    }
-    public void onDoneClick(){ //hiding keyboard
 
         if(getCurrentFocus()!=null) {
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
@@ -45,6 +37,7 @@ public class MyActivity extends Activity {
         }
 
     }
+
     public String[] binaryConvert(String response){
         response = response.toLowerCase(); //making the array lower case
         String[] responseArray = response.split(""); //spitting the response array
