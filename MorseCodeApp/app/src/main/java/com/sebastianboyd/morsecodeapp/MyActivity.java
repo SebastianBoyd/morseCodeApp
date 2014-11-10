@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.view.View;
 import android.hardware.Camera;
 import java.util.*;
-import android.view.WindowManager;
 import android.view.MenuItem;
 import java.util.Arrays;
 
