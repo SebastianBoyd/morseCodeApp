@@ -39,8 +39,10 @@ public class MyActivity extends Activity {
     }
     public void onDoneClick(){ //hiding keyboard
 
-        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(userInput.getWindowToken(),0);
+        if(getCurrentFocus()!=null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
 
     }
     public String[] binaryConvert(String response){
