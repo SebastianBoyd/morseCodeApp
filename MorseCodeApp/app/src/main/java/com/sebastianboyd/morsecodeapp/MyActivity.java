@@ -132,6 +132,7 @@ public class MyActivity extends Activity {
         }
     }
     public void flashOutput(View view){
+        
         startCamera();
         userInput = (EditText) findViewById(R.id.userInput);
         String input = String.valueOf(userInput.getText());
