@@ -19,10 +19,11 @@ import android.view.inputmethod.*;
 public class MyActivity extends Activity {
 
     Map Morse = new HashMap();
-    private EditText userInput;
+    EditText userInput;
     private int dash = 800;
     private int dot = 200;
     private int space = 400;
+    Button done;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +31,17 @@ public class MyActivity extends Activity {
         setContentView(R.layout.activity_my);
         makeMap();
 
-
+        done = (Button) findViewById(R.id.bDone);
+        done.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                onDoneClick();
+            }
+        });
     }
-    public void onDoneButtonClick(View view){
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+    public void onDoneClick(){ //hiding keyboard
+
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(userInput.getWindowToken(),0);
 
     }
     public String[] binaryConvert(String response){

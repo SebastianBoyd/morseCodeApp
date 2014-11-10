@@ -58,8 +58,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Done"
-            android:onClick="onDoneButtonClick"
-            android:id="@+id/done"
+            android:onClick="onDoneClick"
+            android:id="@+id/bDone"
             android:layout_weight="1.06" />
 
 
