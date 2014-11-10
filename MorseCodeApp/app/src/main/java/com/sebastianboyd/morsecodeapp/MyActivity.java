@@ -29,6 +29,8 @@ public class MyActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
         makeMap();
+    }
+    public void onDoneClick(View view){
 
 
         if(getCurrentFocus()!=null) {
