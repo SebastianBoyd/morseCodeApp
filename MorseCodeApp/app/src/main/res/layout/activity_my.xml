@@ -104,13 +104,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dot"
-                        android:id="@+id/dot" />
+                        android:id="@+id/bDot" />
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dash"
-                        android:id="@+id/dash" />
+                        android:id="@+id/bDash" />
                 </LinearLayout>
 
 
