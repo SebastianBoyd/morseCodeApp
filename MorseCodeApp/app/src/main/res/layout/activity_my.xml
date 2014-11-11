@@ -110,7 +110,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dash"
-                        android:id="@+id/Dash" />
+                        android:id="@+id/dash" />
                 </LinearLayout>
 
 
