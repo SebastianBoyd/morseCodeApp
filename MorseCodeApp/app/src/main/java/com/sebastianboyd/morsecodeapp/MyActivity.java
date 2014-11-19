@@ -8,9 +8,10 @@ import android.view.Menu;
 import android.view.View;
 import android.hardware.Camera;
 import java.util.*;
+import android.media.ToneGenerator;
 import android.view.MenuItem;
 import java.util.Arrays;
-
+import android.media.AudioManager;
 import android.widget.*;
 import android.view.inputmethod.*;
 
@@ -150,7 +151,7 @@ public class MyActivity extends Activity {
                 if (workingArray[num2] == '0'){
                     flashOn();
                     try {
-                        Thread.sleep(200);
+                        Thread.sleep(400);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -160,7 +161,7 @@ public class MyActivity extends Activity {
                 if (workingArray[num2] == '1'){
                     flashOn();
                     try {
-                        Thread.sleep(400);
+                        Thread.sleep(800);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -168,13 +169,13 @@ public class MyActivity extends Activity {
                 }
                 if (workingArray[num2] == '2'){
                     try {
-                        Thread.sleep(200);
+                        Thread.sleep(400);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(200);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -249,7 +250,59 @@ public class MyActivity extends Activity {
             num++;
         }
     }
+    public void soundOutput(View view){
+        int sound = 1;
+        ToneGenerator tone = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
+        tone.stopTone();
 
+        userInput = (EditText) findViewById(R.id.userInput);
+        String input = String.valueOf(userInput.getText());
+        String response = input;
+        String[] converted = binaryConvert(response);
+        int num = 0;
+        String working = null;
+        while (num < converted.length){
+            working = converted[num];
+            char[] workingArray = working.toCharArray();
+            int num2 = 0;
+            while (num2 < workingArray.length){
+                if (workingArray[num2] == '0'){
+                    tone.startTone(sound);
+                    try {
+                        Thread.sleep(400);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    tone.stopTone();
+
+                }
+                if (workingArray[num2] == '1'){
+                    tone.startTone(sound);
+                    try {
+                        Thread.sleep(800);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    tone.stopTone();
+                }
+                if (workingArray[num2] == '2'){
+                    try {
+                        Thread.sleep(400);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                num2++;
+            }
+            num++;
+        }
+        tone.release();
+    }
 
     public void makeMap(){
         Morse.put("a", "01");

@@ -8,5 +8,6 @@
     <string name="title_activity_vibrate">VibrateActivity</string>
     <string name="flash_button">Flash</string>
     <string name="enter_button">Enter</string>
+    <string name="sound_button">Audio</string>
 
 </resources>
